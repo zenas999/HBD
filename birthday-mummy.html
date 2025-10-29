@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Mummy 🎉</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f8e1f4, #f0f4ff);
+    color: #333;
+    overflow-x: hidden;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 2.5em;
+    margin-top: 30px;
+    color: #ff4fa3;
+    text-shadow: 0 0 15px rgba(255, 105, 180, 0.8);
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow {
+    from { text-shadow: 0 0 10px #ff4fa3; }
+    to { text-shadow: 0 0 25px #ff8fd8; }
+  }
+
+  .photo {
+    margin-top: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(255, 192, 203, 0.6);
+    width: 220px;
+    height: 300px;
+    object-fit: cover;
+    animation: float 4s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+  }
+
+  .message {
+    margin: 40px auto;
+    max-width: 320px;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(255, 182, 193, 0.5);
+    line-height: 1.6;
+    font-size: 1.05em;
+    animation: fadeIn 2s ease-in;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  footer {
+    margin: 20px 0;
+    font-weight: bold;
+    color: #444;
+    animation: fadeIn 3s ease-in;
+  }
+
+  .petal {
+    position: fixed;
+    top: -10px;
+    width: 15px;
+    height: 15px;
+    background: pink;
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: fall 6s linear infinite;
+  }
+
+  @keyframes fall {
+    to {
+      transform: translateY(100vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+</style>
+</head>
+<body>
+
+<h1>🎉 Happy Birthday Mummy 🎉</h1>
+
+<!-- 🖼️ Replace the src below with your mum’s photo -->
+<img src="mummy.jpg" alt="Mummy's Photo" class="photo">
+
+<div class="message">
+  <p>Dear Mummy,</p>
+  <p>Today I celebrate not just your birthday but the love, warmth, and strength you’ve given me every day.  
+  Thank you for being my biggest blessing. You deserve endless joy and peace. ❤️</p>
+</div>
+
+<footer>With love, <strong>Dami</strong> 💐</footer>
+
+<audio autoplay loop>
+  <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_996a35103e.mp3" type="audio/mp3">
+</audio>
+
+<script>
+  // Create floating petals 🌸
+  function createPetal() {
+    const petal = document.createElement('div');
+    petal.classList.add('petal');
+    petal.style.left = Math.random() * 100 + 'vw';
+    petal.style.animationDuration = (4 + Math.random() * 4) + 's';
+    document.body.appendChild(petal);
+
+    setTimeout(() => petal.remove(), 8000);
+  }
+  setInterval(createPetal, 300);
+</script>
+</body>
+</html>
